@@ -2455,6 +2455,13 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/29/06/0adb15491518db7b0617bbc3f0894fbc1ffa74b1fc0c051217b1c1a538f5/langgraph_cli-0.4.12-py3-none-any.whl", hash = "sha256:ce85901b307dfa14408c6e4e122a2ccafe3abc53f6bcc99f5080715c1a0a8347", size = 41159, upload-time = "2026-01-23T13:34:14.65Z" },
 ]
 
+[package.optional-dependencies]
+inmem = [
+    { name = "langgraph-api" },
+    { name = "langgraph-runtime-inmem" },
+    { name = "python-dotenv" },
+]
+
 [[package]]
 name = "langgraph-prebuilt"
 version = "1.0.8"
@@ -2533,10 +2540,9 @@ dependencies = [
     { name = "langchain-teddynote" },
     { name = "langchain-text-splitters" },
     { name = "langgraph" },
-    { name = "langgraph-api" },
     { name = "langgraph-checkpoint-postgres" },
     { name = "langgraph-checkpoint-redis" },
-    { name = "langgraph-cli" },
+    { name = "langgraph-cli", extra = ["inmem"] },
     { name = "langgraph-supervisor" },
     { name = "matplotlib" },
     { name = "mcp" },
@@ -2570,10 +2576,9 @@ requires-dist = [
     { name = "langchain-teddynote", specifier = ">=0.5.4" },
     { name = "langchain-text-splitters", specifier = ">=1.1.1" },
     { name = "langgraph", specifier = ">=1.0.5" },
-    { name = "langgraph-api", specifier = ">=0.7.60" },
     { name = "langgraph-checkpoint-postgres", specifier = ">=3.0.2" },
     { name = "langgraph-checkpoint-redis", specifier = ">=0.3.1" },
-    { name = "langgraph-cli", specifier = ">=0.4.12" },
+    { name = "langgraph-cli", extras = ["inmem"], specifier = ">=0.4.12" },
     { name = "langgraph-supervisor", specifier = ">=0.0.31" },
     { name = "matplotlib", specifier = ">=3.10.7" },
     { name = "mcp", specifier = ">=1.21.0" },
